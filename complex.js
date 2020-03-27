@@ -1,27 +1,27 @@
-var Complex = /** @class */ (function () {
-    function Complex(real, imaginary) {
+"use strict";
+class Complex {
+    constructor(real, imaginary) {
         this.real = real;
         this.imaginary = imaginary;
     }
-    Complex.prototype.add = function (other) {
+    add(other) {
         return new Complex(this.real + other.real, this.imaginary + other.imaginary);
-    };
-    Complex.prototype.subtract = function (other) {
+    }
+    subtract(other) {
         return new Complex(this.real - other.real, this.imaginary - other.imaginary);
-    };
-    Complex.prototype.calculateModule = function () {
+    }
+    calculateModule() {
         return Math.sqrt(Math.pow(this.real, 2) + Math.pow(this.imaginary, 2));
-    };
-    Complex.prototype.toString = function () {
-        return "Complex: real=" + this.real + ", imaginary=" + this.imaginary;
-    };
-    return Complex;
-}());
-var complex1 = new Complex(1, 2);
-var complex2 = new Complex(3, 4);
-var additionResult = complex1.add(complex2);
-console.log("Wynik dodawania: " + additionResult);
-var subtractionResult = additionResult.subtract(complex1);
-console.log("Wynik odejmowania: " + subtractionResult);
-var module = subtractionResult.calculateModule();
-console.log("Modu\u0142: " + module);
+    }
+    toString() {
+        return `Complex: real=${this.real}, imaginary=${this.imaginary}`;
+    }
+}
+const complex1 = new Complex(1, 2);
+const complex2 = new Complex(3, 4);
+const additionResult = complex1.add(complex2);
+console.log(`Wynik dodawania: ${additionResult}`);
+const subtractionResult = additionResult.subtract(complex1);
+console.log(`Wynik odejmowania: ${subtractionResult}`);
+const module = subtractionResult.calculateModule();
+console.log(`Moduł: ${module}`);
