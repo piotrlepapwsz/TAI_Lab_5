@@ -10,19 +10,19 @@ export class DataService {
   }
 
   getAll() {
-    return this.http.get(this.url + '/api/posts');
+    return this.http.get(this.url + '/posts');
   }
 
   getById(id) {
-    return this.http.get(this.url + `/api/posts/${id}`);
+    return this.http.get(this.url + `/posts/${id}`);
   }
 
   getByText(data) {
-    return this.http.post(this.url + '/api/posts/', data);
+    return this.http.post(this.url + '/posts/', data);
   }
 
   createOrUpdate(post) {
-    return this.http.post(`${this.url}/api/posts`, post);
+    return this.http.post(`${this.url}/posts`, post);
   }
 }
 
