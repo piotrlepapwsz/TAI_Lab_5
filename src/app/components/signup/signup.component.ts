@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 
 @Component({
-  selector: 'app-signup',
+  selector: 'signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
@@ -12,6 +12,7 @@ export class SignupComponent implements OnInit {
     name: '',
     email: '',
     password: '',
+    active: true,
   };
 
   constructor(private authService: AuthService) {
