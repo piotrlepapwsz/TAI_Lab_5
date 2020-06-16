@@ -2,9 +2,12 @@
   <a class="nav-link active" [routerLink]="['/']">Home</a>
   <a class="nav-link" [routerLink]="['/blog']">Blog</a>
   <a class="nav-link" [routerLink]="['/contact']">Contact</a>
-  <button *ngIf="!authService.currentUser" class="nav-link" routerLink="/login">Zaloguj</button>
-  <button (click)="logOut()" *ngIf="authService.currentUser" class="nav-link">Wyloguj</button>
-  <button *ngIf="!authService.currentUser" class="nav-link" routerLink="/signup">Zarejestruj
+  <button *ngIf="!authService.getAuthenticatedUser()" class="nav-link" routerLink="/login">Zaloguj
+  </button>
+  <button (click)="logOut()" *ngIf="authService.getAuthenticatedUser()" class="nav-link">Wyloguj
+  </button>
+  <button *ngIf="!authService.getAuthenticatedUser()" class="nav-link" routerLink="/signup">
+    Zarejestruj
   </button>
 
 </nav>

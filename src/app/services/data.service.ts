@@ -17,12 +17,9 @@ export class DataService {
     return this.http.get(this.url + `/posts/${id}`);
   }
 
-  getByText(data) {
-    return this.http.post(this.url + '/posts/', data);
-  }
-
-  createOrUpdate(post) {
-    return this.http.post(`${this.url}/posts`, post);
+  createPost(data) {
+    return this.http.post(`${this.url}/posts`, JSON.stringify(data),
+      {headers: {'Content-Type': 'application/json'}});
   }
 }
 

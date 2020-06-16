@@ -1,0 +1,17 @@
+<div class="container" style="margin-top: 150px;">
+  <form>
+    <div class="form-group">
+      <input [(ngModel)]="post.title" class="form-control" name="title" placeholder="Tytuł"
+             type="text">
+    </div>
+    <div class="form-group">
+      <input [(ngModel)]="post.url" class="form-control" name="url" placeholder="Adres url obrazka"
+             type="text">
+    </div>
+    <div class="form-group">
+  	<textarea [(ngModel)]="post.content" class="form-control" name="content" rows="10">
+  	</textarea>
+    </div>
+    <button (click)="onSubmit()" class="btn btn-primary" type="submit">Wyślij</button>
+  </form>
+</div>

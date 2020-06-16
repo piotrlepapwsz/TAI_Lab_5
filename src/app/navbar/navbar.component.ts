@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
+import {AuthenticationService} from "../services/authentication.service";
 
 @Component({
   selector: 'navbar',
@@ -9,13 +9,12 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent {
 
-  constructor(public authService: AuthService, public router: Router) {
+  constructor(public authService: AuthenticationService, public router: Router) {
   }
 
   logOut() {
-    this.authService.logout().subscribe(() => {
-      this.router.navigate(['/']);
-    });
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 
 }
