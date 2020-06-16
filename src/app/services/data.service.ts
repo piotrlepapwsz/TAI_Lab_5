@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class DataService {
 
-  private url = 'https://piotr-blog.herokuapp.com/api';
+  private url = 'http://localhost:8080/api';
 
   constructor(private http: HttpClient) {
   }
